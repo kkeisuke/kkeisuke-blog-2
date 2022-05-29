@@ -13,6 +13,7 @@
     "@nuxtjs/tailwindcss": "^5.1.2",
     "eslint": "^8.16.0",
     "nuxt": "^3.0.0-rc.3",
+    "remark-heading-id": "^1.0.0",
     "textlint": "^12.1.1",
     "textlint-rule-preset-ja-technical-writing": "^7.0.0",
     "textlint-rule-preset-jtf-style": "^2.3.12"

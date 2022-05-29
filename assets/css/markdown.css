@@ -1,0 +1,63 @@
+.nuxt-content {
+  h2 {
+    @apply py-4 text-2xl font-bold;
+    @screen xl {
+      @apply text-3xl;
+    }
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply py-2 text-lg font-bold;
+  }
+  :where(h2, h3, h4, h5, h6) a {
+    @apply text-current no-underline;
+  }
+  hr {
+    @apply my-2;
+  }
+  p {
+    @apply pb-8;
+  }
+  ul {
+    @apply pb-8 pl-1 list-outside list-disc;
+    ul {
+      @apply pb-0;
+    }
+  }
+  ol {
+    @apply pb-8 pl-1 list-outside list-decimal;
+  }
+  li {
+    @apply ml-4;
+    &::marker {
+      @apply text-gray-500;
+    }
+  }
+  p,
+  li {
+    code {
+      @apply px-1 bg-gray-800 text-gray-200 text-sm;
+    }
+  }
+  blockquote {
+    @apply mb-6 pl-2 border-gray-500 border-l-4;
+    p {
+      @apply pb-0 whitespace-pre;
+    }
+  }
+  table {
+    @apply mb-6;
+    td,
+    th {
+      @apply p-2 border border-gray-500;
+    }
+  }
+  .footnotes {
+    @apply text-sm;
+  }
+  img {
+    @apply inline-block;
+  }
+}

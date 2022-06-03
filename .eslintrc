@@ -13,7 +13,7 @@
     "vue/component-name-in-template-casing": ["error", "kebab-case"], // script setup では動かない? https://github.com/vuejs/eslint-plugin-vue/issues/1629
     "vue/no-duplicate-attr-inheritance": "error",
     "vue/no-template-target-blank": "error",
-    "vue/no-unused-properties": "error",
+    // "vue/no-unused-properties": "error", // defineProps で意図ぜず error になる
     "vue/no-useless-mustaches": "error",
     "vue/no-useless-v-bind": "error",
     "vue/v-on-function-call": "error",

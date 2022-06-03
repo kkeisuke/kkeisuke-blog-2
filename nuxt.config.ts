@@ -41,5 +41,10 @@ export default defineNuxtConfig({
     markdown: {
       remarkPlugins: ['remark-heading-id']
     }
+  },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
   }
 })

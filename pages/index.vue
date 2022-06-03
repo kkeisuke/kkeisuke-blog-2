@@ -4,7 +4,7 @@ import BlogTitle from '@/components/index/BlogTitle.vue'
 import ArticleList from '@/components/index/ArticleList.vue'
 import { Article } from '@/types/Article'
 
-const { data: articles } = await useAsyncData<Article[]>('articles', () => queryContent<Article>('/articles').sort({ date: 0 }).find())
+const { data: articles } = await useAsyncData<Article[]>('articles', () => queryContent<Article>('/articles').sort({ date: -1 }).find())
 const { title } = useRuntimeConfig().public
 
 useHead({

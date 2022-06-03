@@ -4,12 +4,12 @@ import ArticleBlogTitle from '@/components/articles/ArticleBlogTitle.vue'
 import ArticleHeader from '@/components/articles/ArticleHeader.vue'
 import { Article } from '@/types/Article'
 
+const { title, url } = useRuntimeConfig().public
 const { path, fullPath } = useRoute()
 
 const { data: article } = await useAsyncData<Article>(`article-${path}`, () => queryContent<Article>().where({ _path: path }).findOne())
-const { title, url } = useRuntimeConfig().public
 
-useHead({
+article.value && useHead({
   title: article.value.title,
   titleTemplate: `%s - ${title}`,
   meta: [
@@ -27,8 +27,12 @@ useHead({
     <main>
       <ArticleBlogTitle :title="title" class="mb-10" />
       <article>
-        <ArticleHeader :title="article.title" :date="article.date" class="mb-10" />
-        <ContentDoc class="nuxt-content" />
+        <ArticleHeader v-if="article" :title="article.title" :date="article.date" class="mb-10" />
+        <ContentDoc class="nuxt-content">
+          <template #not-found>
+            <ArticleHeader title="Page Not Found" date="Please return to the home." class="mb-10" />
+          </template>
+        </ContentDoc>
       </article>
       <Links class="pt-4" />
     </main>

@@ -23,20 +23,18 @@ article.value && useHead({
 </script>
 
 <template>
-  <NuxtLayout name="default">
-    <main>
-      <ArticleBlogTitle :title="title" class="mb-10" />
-      <article>
-        <ArticleHeader v-if="article" :title="article.title" :date="article.date" class="mb-10" />
-        <ContentDoc class="nuxt-content">
-          <template #not-found>
-            <ArticleHeader title="Page Not Found" date="Please return to the home." class="mb-10" />
-          </template>
-        </ContentDoc>
-      </article>
-      <Links class="pt-4" />
-    </main>
-  </NuxtLayout>
+  <main>
+    <ArticleBlogTitle :title="title" class="mb-10" />
+    <article>
+      <ArticleHeader v-if="article" :title="article.title" :date="article.date" class="mb-10" />
+      <ContentDoc class="nuxt-content">
+        <template #not-found>
+          <ArticleHeader title="Page Not Found" date="Please return to the home." class="mb-10" />
+        </template>
+      </ContentDoc>
+    </article>
+    <Links class="pt-4" />
+  </main>
 </template>
 
 <style>

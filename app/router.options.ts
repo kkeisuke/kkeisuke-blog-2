@@ -6,7 +6,7 @@ export default <RouterConfig>{
     return new Promise((resolve) => {
       const delay = to.hash ? 400 : 300
       setTimeout(() => {
-        resolve(savedPosition || to.hash ? { el: to.hash, behavior: 'smooth' } : { left: 0, top: 0 })
+        resolve(savedPosition || (to.hash ? { el: to.hash, behavior: 'smooth' } : { left: 0, top: 0 }))
       }, delay)
     })
   }

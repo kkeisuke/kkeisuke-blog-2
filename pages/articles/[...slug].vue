@@ -5,9 +5,9 @@ import ArticleHeader from '@/components/articles/ArticleHeader.vue'
 import { Article } from '@/types/Article'
 
 const { title, url } = useRuntimeConfig().public
-const { path, fullPath } = useRoute()
+const { path, fullPath, hash } = useRoute()
 
-const { data: article } = await useAsyncData<Article>(`article-${path}`, () => queryContent<Article>().where({ _path: path }).findOne())
+const { data: article } = await useAsyncData<Article>(`article-${path}`, () => queryContent<Article>().where({ _path: path }).findOne(), { lazy: true })
 
 article.value && useHead({
   title: article.value.title,
@@ -19,6 +19,13 @@ article.value && useHead({
     { hid: 'ogType', property: 'og:type', content: 'article' },
     { hid: 'ogUrl', property: 'og:url', content: `${url}${fullPath}` }
   ]
+})
+
+onMounted(() => {
+  setTimeout(() => {
+    const target = hash ? document.querySelector(hash) || document.body : document.body
+    target.scrollIntoView()
+  })
 })
 </script>
 

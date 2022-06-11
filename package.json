@@ -11,7 +11,7 @@
     "@nuxt/content": "^2.0.1",
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
     "@nuxtjs/tailwindcss": "^5.1.2",
-    "eslint": "^8.16.0",
+    "eslint": "^8.17.0",
     "nuxt": "^3.0.0-rc.3",
     "remark-heading-id": "^1.0.0",
     "sitemap": "^7.1.1",

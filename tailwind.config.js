@@ -1,7 +1,9 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  content: [],
+  content: [
+    './content/articles/**/*.md'
+  ],
   theme: {
     colors: {
       transparent: 'transparent',

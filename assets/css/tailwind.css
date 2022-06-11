@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-gray-800 md:leading-7;
+    @apply text-gray-800 md:leading-7 tracking-wide;
   }
   h1,
   h2,

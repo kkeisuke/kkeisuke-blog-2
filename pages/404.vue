@@ -9,7 +9,8 @@ const { title } = useRuntimeConfig().public
 <template>
   <main>
     <ArticleBlogTitle :title="title" class="mb-10" />
-    <ContentDoc path="/404" class="nuxt-content" />
+    <!-- path が無いと、generate 時に取得できない -->
+    <ContentDoc path="/404" class="nuxt-content" tag="section" />
     <Links class="pt-4" />
   </main>
 </template>

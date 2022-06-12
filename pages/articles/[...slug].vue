@@ -33,7 +33,7 @@ article.value && useHead({
         <ContentRenderer :value="article" class="nuxt-content" />
       </template>
       <template v-else>
-        <ContentDoc path="/404" class="nuxt-content" />
+        <ContentDoc path="/404" class="nuxt-content" tag="section" />
       </template>
     </article>
     <Links class="pt-4" />

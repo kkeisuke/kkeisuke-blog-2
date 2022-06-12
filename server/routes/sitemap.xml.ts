@@ -10,6 +10,8 @@ export default defineEventHandler(async (event) => {
   const sitemap = new SitemapStream({ hostname: url })
 
   for (const doc of docs) {
+    if (doc.title === '404') { continue }
+
     sitemap.write({
       url: doc._path
       // changefreq: 'monthly'

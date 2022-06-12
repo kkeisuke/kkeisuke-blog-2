@@ -44,7 +44,9 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/sitemap.xml']
+      // 404.html は cloudflare pages 用
+      // https://developers.cloudflare.com/pages/platform/serving-pages/
+      routes: ['/sitemap.xml', '/404.html']
     }
   }
 })

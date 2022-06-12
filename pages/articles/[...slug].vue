@@ -29,7 +29,7 @@ article.value && useHead({
     <ArticleBlogTitle :title="title" class="mb-10" />
     <article>
       <template v-if="article">
-        <ArticleHeader :title="article.title" :date="article.date" class="mb-10" />
+        <ArticleHeader v-if="article.title" :title="article.title" :date="article.date" class="mb-10" />
         <ContentRenderer :value="article" class="nuxt-content">
           <template #empty>
             <ArticleHeader title="Page Not Found" date="Please return to the home." class="mb-10" />

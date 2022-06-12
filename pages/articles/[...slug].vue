@@ -5,9 +5,11 @@ import ArticleHeader from '@/components/articles/ArticleHeader.vue'
 import { Article } from '@/types/Article'
 
 const { title, url } = useRuntimeConfig().public
-const { path, fullPath } = useRoute()
+const { fullPath, params } = useRoute()
 
-const { data: article } = await useAsyncData<Article>(`article-${path}`, () => queryContent<Article>().where({ _path: path }).findOne())
+const _path = `/articles/${params.slug[0]}`
+
+const { data: article } = await useAsyncData<Article>(_path, () => queryContent<Article>().where({ _path }).findOne())
 
 article.value && useHead({
   title: article.value.title,
@@ -26,12 +28,13 @@ article.value && useHead({
   <main>
     <ArticleBlogTitle :title="title" class="mb-10" />
     <article>
-      <ArticleHeader v-if="article" :title="article.title" :date="article.date" class="mb-10" />
-      <ContentDoc class="nuxt-content">
-        <template #not-found>
-          <ArticleHeader title="Page Not Found" date="Please return to the home." class="mb-10" />
-        </template>
-      </ContentDoc>
+      <template v-if="article">
+        <ArticleHeader :title="article.title" :date="article.date" class="mb-10" />
+        <ContentRenderer :value="article" class="nuxt-content" />
+      </template>
+      <template v-else>
+        <ArticleHeader title="Page Not Found" date="Please return to the home." class="mb-10" />
+      </template>
     </article>
     <Links class="pt-4" />
   </main>

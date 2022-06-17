@@ -6,7 +6,7 @@ import { Article } from '@/types/Article'
 
 const { title } = useRuntimeConfig().public
 
-const { data: articles } = await useAsyncData<Article[]>('articles', () => queryContent<Article>('/articles').sort({ date: -1 }).find())
+const { data: articles } = await useAsyncData('articles', () => queryContent<Article>('/articles').sort({ date: -1 }).find())
 
 useHead({
   title,

@@ -9,7 +9,7 @@ const { fullPath, params } = useRoute()
 
 const _path = `/articles/${params.slug[0]}`
 
-const { data: article } = await useAsyncData<Article>(_path, () => queryContent<Article>().where({ _path }).findOne())
+const { data: article } = await useAsyncData(_path, () => queryContent<Article>().where({ _path }).findOne())
 
 article.value && useHead({
   title: article.value.title,

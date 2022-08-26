@@ -39,8 +39,8 @@ export default defineNuxtConfig({
   ],
   content: {
     highlight: {
-      theme: 'github-light',
-      preload: ['js', 'ts', 'go']
+      theme: 'material-palenight',
+      preload: ['js', 'ts', 'go', 'diff']
     },
     markdown: {
       remarkPlugins: ['remark-heading-id']

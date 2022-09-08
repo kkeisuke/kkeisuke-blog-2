@@ -25,7 +25,7 @@ export default defineNuxtConfig({
         { hid: 'ogTitle', property: 'og:title', content: title },
         { hid: 'ogDescription', property: 'og:description', content: title },
         { hid: 'ogType', property: 'og:type', content: 'website' },
-        { property: 'og:image', content: `${url}/profile.webp` },
+        { hid: 'ogImage', property: 'og:image', content: `${url}/profile.webp` },
         { hid: 'ogUrl', property: 'og:url', content: url },
         { name: 'twitter:card', content: 'summary' },
         { name: 'twitter:site', content: '@kkeisuke' }

@@ -26,17 +26,17 @@ article.value && useHead({
 
 <template>
   <main>
-    <ArticleBlogTitle :title="title" class="mb-10" />
+    <article-blog-title :title="title" class="mb-10" />
     <article>
       <template v-if="article">
-        <ArticleHeader :title="article.title" :date="article.date" class="mb-10" />
+        <article-header :title="article.title" :date="article.date" class="mb-10" />
         <ContentRenderer :value="article" class="nuxt-content" />
       </template>
       <template v-else>
         <ContentDoc path="/404" class="nuxt-content" tag="section" />
       </template>
     </article>
-    <Links class="pt-4" />
+    <links class="pt-4" />
   </main>
 </template>
 

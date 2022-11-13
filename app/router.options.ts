@@ -10,7 +10,7 @@ export default <RouterConfig>{
       nuxtApp.hooks.hookOnce('page:finish', () => {
         setTimeout(() => {
           resolve(savedPosition || (to.hash ? { el: to.hash, behavior: 'smooth' } : { left: 0, top: 0 }))
-        }, 50)
+        })
       })
     })
   }

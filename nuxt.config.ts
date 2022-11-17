@@ -1,5 +1,3 @@
-import { defineNuxtConfig } from 'nuxt'
-
 const title = 'kkeisuke blog'
 const url = 'https://blog.kkeisuke.com'
 
